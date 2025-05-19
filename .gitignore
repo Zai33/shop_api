@@ -1,0 +1,20 @@
+# Ignore build output
+/build/
+dist/
+out/
+
+# Ignore IDE files
+*.iml
+.idea/
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment files
+.env
+
+# Ignore dependencies
+node_modules/
+
