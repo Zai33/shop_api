@@ -5,14 +5,14 @@ import {
   updateCategory,
   deleteCategory,
 } from "../controller/categoryController.js";
-import { protectedRoute } from "../middleware/protectedRoute.js";
+import { protectedRoute, adminOnly } from "../middleware/protectedRoute.js";
 
 const router = express.Router();
 
 router.use(protectedRoute); // Apply the protected route middleware to all routes
-router.get("/", getAllCategories);
-router.post("/create", addCategory);
-router.put("/update/:id", updateCategory);
-router.delete("/delete/:id", deleteCategory);
+router.get("/", adminOnly, getAllCategories);
+router.post("/create", adminOnly, addCategory);
+router.put("/update/:id", adminOnly, updateCategory);
+router.delete("/delete/:id", adminOnly, deleteCategory);
 
 export default router;
